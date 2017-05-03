@@ -11,9 +11,8 @@ class MenuComponent extends React.Component {
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand" href="#">Navbar</a>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ml-auto w-100 justify-content-end">
               {
                 (this.props.children.map(children => (
                   <li className="nav-item">
@@ -21,8 +20,6 @@ class MenuComponent extends React.Component {
                   </li>
                 )))
               }
-
-
             </ul>
           </div>
         </div>

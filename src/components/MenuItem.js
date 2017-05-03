@@ -9,9 +9,10 @@ class MenuItemComponent extends React.Component {
     link: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
   };
+
   render() {
     return (
-      <Link to={`/${this.props.link}`}>
+      <Link to={`${this.props.link}`} className="nav-link">
         {this.props.text}
       </Link>
     );

@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Menu from './Menu';
-import MenuItem from './MenuItem';
+import MenuLanding from './MenuLanding';
+import MenuDashboard from './MenuDashboard';
+import Landing from './Landing';
+import Dashboard from './Dashboard';
 
 
 class AppComponent extends React.Component {
@@ -10,12 +12,10 @@ class AppComponent extends React.Component {
     return (
       <Router>
         <div id="main">
-          <Menu>
-            <MenuItem link="Test1" text="Test1" />
-            <MenuItem link="Test2" text="Test2" />
-            <MenuItem link="Test3" text="Test3" />
-          </Menu>
-          <Route path="/:menu" render={({match}) => (<h2>{match.params.menu}</h2>)}/>
+          <Route path="/:menu(|how|pricing|register|login)" component={MenuLanding}/>
+          <Route path="/:menu(|how|pricing|register|login)" component={Landing}/>
+          <Route path="/dashboard/" component={MenuDashboard}/>
+          <Route path="/dashboard/" component={Dashboard}/>
         </div>
       </Router>
     );
